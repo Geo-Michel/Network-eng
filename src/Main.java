@@ -33,9 +33,10 @@ public class Main {
         /*-----------END OF VALUE INITIALISING-----------*/
         /*-----------TIME SLOT OPERATIONS-----------*/
         while (slot<100){
+            System.out.println("----------TIME SLOT:"+slot+"----------");
             for(int i=0;i<8;i++){
                 if(clients.get(i).WantToTransmit()){//Checking if the specific client has a packet in its buffer
-                    if ((random.nextInt(100)+1)/100<=TransmissionPossibility){//if so the client tries to transmit with 'TransmissionPossibility' possibility
+                    if (random.nextFloat()<=TransmissionPossibility){//if so the client tries to transmit with 'TransmissionPossibility' possibility
                         if(transmission.get(clients.get(i).getWavelength()-1)){//if another client using the same wavelength already wants to transmit the collision flag is set to true
                             collision.set(clients.get(i).getWavelength()-1,true);
                         }
@@ -50,13 +51,14 @@ public class Main {
                 if(RegisteredTransmission.contains(clients.get(i).getId())){
                     if(!collision.get(clients.get(i).getWavelength()-1)){
                         totalDelay+=slot-clients.get(i).transmit();
+                        System.out.println("pc id:"+clients.get(i).getId()+"    Transmitting packet");
                         PacketsSent+=1;
                     }
                 }
             }
-            for (int i=0;i<RegisteredTransmission.size();i++){//Empty the transmission list for the next slot
-                RegisteredTransmission.remove(0);
-            }
+
+            RegisteredTransmission.clear();
+
             for (int i=0;i<4;i++){//re-initialising transmission and collision flags for each wavelength
                 transmission.set(i,false);
                 collision.set(i,false);

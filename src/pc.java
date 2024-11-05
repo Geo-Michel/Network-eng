@@ -23,8 +23,8 @@ public class pc {
     /*A method that returns true if a new packet has arrived given the arrival possibility of a packet.*/
     public boolean Arrival(){
         Random random=new Random();
-        int randomInt= random.nextInt(100)+1;
-        if((randomInt/100)<=possibility){
+        float randomFloat= random.nextFloat();
+        if(randomFloat<=possibility){
             return true;
         }
         else{
