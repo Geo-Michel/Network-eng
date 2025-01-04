@@ -2,13 +2,13 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
 public class pc {
-    private float possibility; /*The arrival possibility of a packet */
+    private double possibility; /*The arrival possibility of a packet */
 
     private int id;
     private Queue<Integer> buffer= new LinkedList<>();
     private int wavelength; /*The wavelength used to communicate with the server*/
 
-    public pc(float possibility, int wavelength, int id){
+    public pc(double possibility, int wavelength, int id){
         this.possibility=possibility;
         this.wavelength=wavelength;
         this.id=id;
