@@ -25,12 +25,6 @@ public class Main {
             for (int i = 0; i < 4; i++) {
                 collision.add(false);
             }
-            Scanner input = new Scanner(System.in);
-            System.out.println("Type the arrival possibility of packets in float format (eg 10%-->0,1)");
-            while (possibility < 0 || possibility > 1) {
-                System.out.println("Invalid input type the arrival possibility of packets in float format from 0-1 (eg 10%-->0,1)");
-                possibility = input.nextFloat();
-            }
             ArrayList<pc> clients = new ArrayList<>();
             for (int i = 0; i < 8; i++) {
                 clients.add(new pc(possibility, (i % 4 + 1), i + 1));
