@@ -39,16 +39,6 @@ public class pc {
             return false;
         }
         else if (buffer.size()>5) {
-            /*ΘΥΜΙΣΟΥ ΝΑ ΤΟ ΒΓΑΛΕΙΣ ΤΟ PRINT
-            *
-            *
-            *
-            *
-            *
-            *
-            *
-            * */
-            System.out.println("---------------------------------------MORE THAN 5 ELEMENTS ON BUFFER QUEUE-------------------------");
             return false;
         }
         else {
