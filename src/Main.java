@@ -47,8 +47,8 @@ public class Main {
                     }
                 }
                 for (int i = 0; i < 8; i++) {
-                    if (RegisteredTransmission.contains(clients.get(i).getId())) {
-                        if (!collision.get(clients.get(i).getWavelength() - 1)) {
+                    if (RegisteredTransmission.contains(clients.get(i).getId())) {//Checking if the client is registered to transmit
+                        if (!collision.get(clients.get(i).getWavelength() - 1)) {//Checking if there is a collision in the specific clients wavelength, if there is not the client transmits the packet
                             totalDelay += slot - clients.get(i).transmit();
                             System.out.println("pc id:" + clients.get(i).getId() + "    Transmitting packet");
                             PacketsSent += 1;
@@ -75,9 +75,6 @@ public class Main {
             avgDelay.add(1.0 * totalDelay / PacketsSent);
             throughput.add(1.0 * PacketsSent / (slot - 1));
             PacketLossRate.add(1.0 * LostPackets / CreatedPackets);
-            System.out.println(CreatedPackets);
-            System.out.println(LostPackets);
-            System.out.println(PacketsSent);
         }
         System.out.println(avgDelay);
         System.out.println(throughput);
