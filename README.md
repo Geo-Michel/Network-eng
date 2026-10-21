@@ -4,4 +4,4 @@ This project implements fundamental networking concepts using socket-based commu
 
 The system simulates a basic networked environment where clients and servers exchange messages, enabling experimentation with communication flows, connectivity, and protocol behavior.
 
-This project was developed as part of a Network Engineering / Computer Networks course or lab assignment.
+This project was developed as part of a Network Engineering / Computer Networks course (lab assignment).
